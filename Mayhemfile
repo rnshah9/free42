@@ -1,0 +1,8 @@
+project: free42
+target: keymap2cc
+
+cmds:
+  - cmd: /repo/common/keymap2cc
+    filepath: /repo/common/keymap.txt
+    env:
+      DISABLE_SMOKETEST: '1'
