@@ -3,5 +3,6 @@ target: keymap2cc
 
 cmds:
   - cmd: /keymap2cc
+    filepath: /keymap.txt
     env:
       DISABLE_SMOKETEST: '1'
