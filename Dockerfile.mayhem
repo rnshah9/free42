@@ -7,11 +7,6 @@ COPY . /repo
 WORKDIR /repo/common
 RUN g++ -o keymap2cc keymap2cc.cc
 
-RUN mkdir -p /deps
-RUN ldd /repo/common/keymap2cc | tr -s '[:blank:]' '\n' | grep '^/' | xargs -I % sh -c 'cp % /deps;'
-
 FROM ubuntu:22.04 as package
-
-COPY --from=builder /deps /deps
-COPY --from=builder /repo/common/keymap2cc /repo/common/keymap2cc
-ENV LD_LIBRARY_PATH=/deps
+COPY --from=builder /repo/common/keymap2cc /
+COPY --from=builder /repo/windows/keymap.txt /
