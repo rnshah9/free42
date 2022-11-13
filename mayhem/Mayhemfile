@@ -1,8 +1,6 @@
 project: free42
-target: keymap2cc
+target: skin2cc
 
 cmds:
-  - cmd: /keymap2cc
-    filepath: /keymap.txt
-    env:
-      DISABLE_SMOKETEST: '1'
+  - cmd: /skin2cc
+    filepath: /skin2cc.conf
